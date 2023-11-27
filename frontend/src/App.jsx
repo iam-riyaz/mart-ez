@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import "./App.css";
 
 import { Navbar } from "./customer/components/Navbar/Navbar.jsx";
 import { HomePage } from "./customer/pages/homePage";
