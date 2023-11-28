@@ -12,7 +12,7 @@ function App() {
       <div>
         <Navbar />
         {/* <AllRoutes/> */}
-        <div className="px-8 mt-2">
+        <div className="pt-20" >
           <HomePage/>
         </div>
       </div>
