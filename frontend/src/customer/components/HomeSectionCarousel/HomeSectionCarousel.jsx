@@ -39,7 +39,7 @@ export const HomeSectionCarousel = () => {
         <div className="relative w-full">
           <AliceCarousel
             items={items}
-            disableButtonsControls
+            disableDotsControls
             responsive={responsive}
             onSlideChanged={syncActiveIndex}
             activeIndex={acitveIndex}
