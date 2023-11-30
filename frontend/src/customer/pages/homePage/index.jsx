@@ -8,7 +8,13 @@ export const HomePage=()=>{
             <MainCarousel/>
         </div>
         <div className="px-8 mt-10 ">
-           <HomeSectionCarousel/>
+           <HomeSectionCarousel title={"Men's Kurta"}/>
+           <HomeSectionCarousel title={"Men's Shirt"}/>
+           <HomeSectionCarousel title={"Men's Trauser"}/>
+           <HomeSectionCarousel title={"Men's Tshirt"}/>
+           <HomeSectionCarousel title={"Men's Latest"}/>
+
+
         </div>
         </>
     )

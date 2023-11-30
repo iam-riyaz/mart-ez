@@ -6,7 +6,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useState } from "react";
 import { mens_kurta } from "../../../data/mens_kurta";
 
-export const HomeSectionCarousel = () => {
+export const HomeSectionCarousel = ({title}) => {
   const [acitveIndex, setActiveIndex] = useState(0);
 
   const responsive = {
@@ -28,14 +28,22 @@ export const HomeSectionCarousel = () => {
 
   return (
     <>
+    <div className="px-2 ">
+        <h2 className="text-2xl font-extrabold">{title}</h2>
       <div className="relative px-2 lg:px-2 flex justify-center py-2 my-2">
-        
-          <div onClick={slidePreview}  className={acitveIndex!=0?"flex items-center":"invisible flex items-center"}>
-            <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 mr-1 rounded-lg flex items-center">
-              <ChevronLeftIcon sx={{ color: "black" }} />
-            </div>
+        <div
+          onClick={slidePreview}
+          className={
+            acitveIndex != 0
+              ? "flex items-center"
+              : "invisible flex items-center"
+          }
+        >
+          <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 mr-1 rounded-lg flex items-center">
+            <ChevronLeftIcon sx={{ color: "black" }} />
           </div>
-         
+        </div>
+
         <div className="relative w-full">
           <AliceCarousel
             items={items}
@@ -45,13 +53,20 @@ export const HomeSectionCarousel = () => {
             activeIndex={acitveIndex}
           />
         </div>
-       
-          <div onClick={slideNext} className={acitveIndex != items.length - 5?"flex items-center":"invisible flex items-center"}>
-            <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 ml-1 rounded-lg flex items-center">
-              <ChevronRightIcon sx={{ color: "black" }} />
-            </div>
+
+        <div
+          onClick={slideNext}
+          className={
+            acitveIndex != items.length - 5
+              ? "flex items-center"
+              : "invisible flex items-center"
+          }
+        >
+          <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 ml-1 rounded-lg flex items-center">
+            <ChevronRightIcon sx={{ color: "black" }} />
           </div>
-        
+        </div>
+      </div>
       </div>
     </>
   );
