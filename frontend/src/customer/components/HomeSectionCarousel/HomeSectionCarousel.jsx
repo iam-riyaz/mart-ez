@@ -13,50 +13,58 @@ export const HomeSectionCarousel = () => {
     0: { items: 1 },
     568: { items: 2 },
     700: { items: 3 },
-    1024: { items: 5.4 },
+    870: { items: 4 },
+    1024: { items: 5 },
   };
 
   const slidePreview = () => setActiveIndex(acitveIndex - 1);
 
   const slideNext = () => setActiveIndex(acitveIndex + 1);
 
+  const items = mens_kurta
+    .slice(0, 10)
+    .map((item) => <HomeSectionCart product={item} />);
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
-
-  const items = mens_kurta.map((item) => <HomeSectionCart product={item} />);
 
   return (
     <>
       <div className="relative px-2 lg:px-2 flex justify-center py-2 my-2">
         {acitveIndex != 0 ? (
-          <div className="flex items-center">
-            <div
-              onClick={slidePreview}
-              className="cursor-pointer border border-solid border-gray-200 h-16 px-1 mr-1 rounded-lg flex items-center"
-            >
+          <div onClick={slidePreview} className="flex items-center">
+            <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 mr-1 rounded-lg flex items-center">
               <ChevronLeftIcon sx={{ color: "black" }} />
             </div>
           </div>
-        ) : null}
+        ) : (
+          <div onClick={slidePreview} className="invisible flex items-center">
+            <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 mr-1 rounded-lg flex items-center">
+              <ChevronLeftIcon sx={{ color: "black" }} />
+            </div>
+          </div>
+        )}
         <div className="relative w-full">
           <AliceCarousel
             items={items}
             disableButtonsControls
-            responsive={responsive}
             disableDotsControls
+            responsive={responsive}
             onSlideChanged={syncActiveIndex}
             activeIndex={acitveIndex}
           />
         </div>
         {acitveIndex != items.length - 1 ? (
-          <div className="flex items-center">
-            <div
-              onClick={slideNext}
-              className="cursor-pointer border border-solid border-gray-200 h-16 px-1 ml-1 rounded-lg flex items-center"
-            >
+          <div onClick={slideNext} className="flex items-center">
+            <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 ml-1 rounded-lg flex items-center">
               <ChevronRightIcon sx={{ color: "black" }} />
             </div>
           </div>
-        ) : null}
+        ) : (
+          <div onClick={slideNext} className="invisible flex items-center">
+            <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 ml-1 rounded-lg flex items-center">
+              <ChevronRightIcon sx={{ color: "black" }} />
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

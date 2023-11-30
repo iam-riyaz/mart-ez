@@ -9,7 +9,6 @@ export const HomePage=()=>{
         </div>
         <div className="px-8 mt-10 ">
            <HomeSectionCarousel/>
-           
         </div>
         </>
     )
