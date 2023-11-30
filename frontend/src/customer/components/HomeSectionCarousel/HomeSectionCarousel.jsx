@@ -29,42 +29,29 @@ export const HomeSectionCarousel = () => {
   return (
     <>
       <div className="relative px-2 lg:px-2 flex justify-center py-2 my-2">
-        {acitveIndex != 0 ? (
-          <div onClick={slidePreview} className="flex items-center">
+        
+          <div onClick={slidePreview}  className={acitveIndex!=0?"flex items-center":"invisible flex items-center"}>
             <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 mr-1 rounded-lg flex items-center">
               <ChevronLeftIcon sx={{ color: "black" }} />
             </div>
           </div>
-        ) : (
-          <div onClick={slidePreview} className="invisible flex items-center">
-            <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 mr-1 rounded-lg flex items-center">
-              <ChevronLeftIcon sx={{ color: "black" }} />
-            </div>
-          </div>
-        )}
+         
         <div className="relative w-full">
           <AliceCarousel
             items={items}
             disableButtonsControls
-            disableDotsControls
             responsive={responsive}
             onSlideChanged={syncActiveIndex}
             activeIndex={acitveIndex}
           />
         </div>
-        {acitveIndex != items.length - 1 ? (
-          <div onClick={slideNext} className="flex items-center">
+       
+          <div onClick={slideNext} className={acitveIndex != items.length - 5?"flex items-center":"invisible flex items-center"}>
             <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 ml-1 rounded-lg flex items-center">
               <ChevronRightIcon sx={{ color: "black" }} />
             </div>
           </div>
-        ) : (
-          <div onClick={slideNext} className="invisible flex items-center">
-            <div className="cursor-pointer border border-solid border-gray-200 h-16 px-1 ml-1 rounded-lg flex items-center">
-              <ChevronRightIcon sx={{ color: "black" }} />
-            </div>
-          </div>
-        )}
+        
       </div>
     </>
   );
