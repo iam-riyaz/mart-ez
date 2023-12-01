@@ -1,5 +1,7 @@
 import { MainCarousel } from "../../components/HomeCarousel/MainCarousel"
 import { HomeSectionCarousel } from "../../components/HomeSectionCarousel/HomeSectionCarousel"
+import TestCarousel from "../../components/HomeSectionCarousel/HomeSectionCarousel"
+
 
 export const HomePage=()=>{
     return(
@@ -13,6 +15,7 @@ export const HomePage=()=>{
            <HomeSectionCarousel title={"Men's Trauser"}/>
            <HomeSectionCarousel title={"Men's Tshirt"}/>
            <HomeSectionCarousel title={"Men's Latest"}/>
+           
 
 
         </div>
