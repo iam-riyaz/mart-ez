@@ -1,31 +1,31 @@
-import React from "react";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
-import { useNavigate } from "react-router-dom";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { mainCarouselData } from "./mainCarouselData";
+import Slider from "react-slick";
 
 export const MainCarousel = () => {
-  const navigate = useNavigate();
-  const items = mainCarouselData.map((e) => (
-    <img
-      src={e.image}
-      onClick={() => navigate(e.path)}
-      className="cursor-pointer"
-      role="presentation"
-      alt="img"
-    />
-  ));
-
+  const settings = {
+    arrows: false,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 800,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   return (
-    <AliceCarousel
-      animationType="fadeout"
-      animationDuration={1200}
-      mouseTracking
-      items={items}
-      disableButtonsControls
-      autoPlay
-      infinite
-      controlsStrategy="alternate"
-    />
+    <div>
+      <Slider {...settings}>
+        {mainCarouselData.map((e) => (
+          <img
+            src={e.image}
+            onClick={() => navigate(e.path)}
+            className="cursor-pointer"
+            role="presentation"
+            alt="img"
+          />
+        ))}
+      </Slider>
+    </div>
   );
 };

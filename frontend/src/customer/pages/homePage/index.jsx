@@ -5,7 +5,7 @@ import { HomeSectionCarousel } from "../../components/HomeSectionCarousel/HomeSe
 export const HomePage=()=>{
     return(
         <>
-        <div  >
+        <div>
             <MainCarousel/>
         </div>
         <div className="px-8 mt-10 ">

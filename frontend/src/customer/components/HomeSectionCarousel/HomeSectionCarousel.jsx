@@ -1,13 +1,10 @@
-import AliceCarousel from "react-alice-carousel";
 import { HomeSectionCart } from "../HomeSectionCard/HomeSectionCard";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { useState } from "react";
 import { mens_kurta } from "../../../data/mens_kurta";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HomeSectionCarousel.css"
 import Slider from "react-slick";
+
 
 export const HomeSectionCarousel = ({ title }) => {
   var settings = {
@@ -46,7 +43,6 @@ export const HomeSectionCarousel = ({ title }) => {
   return (
     <div className="px-2 ">
       <h2 className="text-2xl font-extrabold">{title}</h2>
-      <div >
         <div>
           <Slider {...settings}>
             {mens_kurta.slice(0, 10).map((item) => (
@@ -54,7 +50,6 @@ export const HomeSectionCarousel = ({ title }) => {
             ))}
           </Slider>
         </div>
-      </div>
     </div>
   );
 };
