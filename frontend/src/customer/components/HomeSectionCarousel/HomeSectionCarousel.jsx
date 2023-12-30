@@ -1,15 +1,14 @@
 import { HomeSectionCart } from "../HomeSectionCard/HomeSectionCard";
-import { mens_kurta } from "../../../data/mens_kurta";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HomeSectionCarousel.css"
 import Slider from "react-slick";
 
 
-export const HomeSectionCarousel = ({ title }) => {
+export const HomeSectionCarousel = ({ title,data }) => {
   var settings = {
     infinite: false,
-    speed: 500,
+    speed: 700,
     slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -18,16 +17,16 @@ export const HomeSectionCarousel = ({ title }) => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
+          slidesToScroll: 1,
+          infinite: false,
+          dots: false,
         },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -45,7 +44,7 @@ export const HomeSectionCarousel = ({ title }) => {
       <h2 className="text-2xl font-extrabold">{title}</h2>
         <div>
           <Slider {...settings}>
-            {mens_kurta.slice(0, 10).map((item) => (
+            {data.slice(0, 10).map((item) => (
               <HomeSectionCart product={item} />
             ))}
           </Slider>

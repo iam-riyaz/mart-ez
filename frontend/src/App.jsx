@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import { Navbar } from "./customer/components/Navbar/Navbar.jsx";
 import { HomePage } from "./customer/pages/homePage";
+import { Footer } from "./customer/components/Footer/index.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,9 +15,8 @@ function App() {
         {/* <AllRoutes/> */}
         <div className="pt-20" >
           <HomePage/>
-          <div className="w-1/4">
-          </div>
         </div>
+        <Footer/>
       </div>
     </>
   );
