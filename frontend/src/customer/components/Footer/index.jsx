@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 
 export const Footer = () => {
   return (
@@ -12,69 +12,100 @@ export const Footer = () => {
           <Typography className="pb-5" variant="h6">
             Company
           </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          <div>
+          <button className="pb-5 text-md"    >
             About
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+
+          <div>
+          <button className="pb-5 text-md "  >
             Blog
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5  text-md"  >
             Press
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5  text-md"  >
             Carees
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5 text-md"  >
             Partners
-          </Typography>
+          </button>
+          </div>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
           <Typography className="pb-5" variant="h6">
             Solutions
           </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          <div>
+          <button className="pb-5 text-md" >
             Marketing
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5 text-md" >
             Analytics
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5 text-md" >
             Commerce
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5 text-md" >
             Insights
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5 text-md" >
             Support
-          </Typography>
+          </button>
+          </div>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
           <Typography className="pb-5" variant="h6">
             Documentation
           </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          <div>
+          <button className="pb-5 text-md" >
             Guldes
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5 text-md" >
             API Status
-          </Typography>
+          </button>
+          </div>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
           <Typography className="pb-5" variant="h6">
             Legal
           </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          <div>
+          <button className="pb-5 text-md" variant="h6" gutterBottom>
             Claim
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5 text-md" variant="h6" gutterBottom>
             Privacy
-          </Typography>
-          <Typography className="pb-5" variant="h6" gutterBottom>
+          </button>
+          </div>
+          <div>
+          <button className="pb-5 text-md" variant="h6" gutterBottom>
             Terms
-          </Typography>
+          </button>
+          </div>
         </Grid>
       </Grid>
     </>
