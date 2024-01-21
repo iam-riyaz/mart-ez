@@ -14,8 +14,7 @@ export const HomePage = () => {
         <HomeSectionCarousel data={mens_kurta} title={"Men's Shirt"} />
         <HomeSectionCarousel data={mens_kurta} title={"Women's Saree"} />
         <HomeSectionCarousel data={mens_kurta} title={"Women's Dress"} />
-        <HomeSectionCarousel data={mens_kurta} title={"Women's Saree"} />
-        <HomeSectionCarousel data={mens_kurta} title={"Women's Dress"} />
+     
         
         
       </div>
