@@ -15,6 +15,8 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import {Avatar, Button, Menu, MenuItem} from "@mui/material"
+import { deepPurple } from '@mui/material/colors'
 
 
 const navigation = {
@@ -134,10 +136,7 @@ const navigation = {
       ],
     },
   ],
-  pages: [
-    { name: 'Company', href: '#' },
-    { name: 'Stores', href: '#' },
-  ],
+ 
 }
 
 function classNames(...classes) {
@@ -252,7 +251,7 @@ export const Navbar =()=> {
 
                 
 
-                <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+                {/* <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
                     <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
                       Sign in
@@ -263,19 +262,9 @@ export const Navbar =()=> {
                       Create account
                     </a>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="border-t border-gray-200 px-4 py-6">
-                  <a href="#" className="-m-2 flex items-center p-2">
-                    <img
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
-                      alt=""
-                      className="block h-auto w-5 flex-shrink-0"
-                    />
-                    <span className="ml-3 block text-base font-medium text-gray-900">CAD</span>
-                    <span className="sr-only">, change currency</span>
-                  </a>
-                </div>
+                
               </Dialog.Panel>
             </Transition.Child>
           </div>
@@ -303,7 +292,7 @@ export const Navbar =()=> {
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
                 <a href="#">
-                  <span className="sr-only">Your Company</span>
+                  <span className="sr-only"></span>
                   <img
                     className="h-14 w-auto"
                     src="/logo.png"
@@ -405,7 +394,7 @@ export const Navbar =()=> {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                {/* <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Sign in
                   </a>
@@ -413,7 +402,45 @@ export const Navbar =()=> {
                   <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Create account
                   </a>
-                </div>
+                </div> */}
+                 <div className=" hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                  {true?(<div>
+                    <Avatar
+                    className='text-white'
+                    aria-controls={open?"basic-menu":undefined}
+                    aria-haspop="true"
+                    aria-expanded={open? "true":undefined}
+                    sx={{
+                      bgcolor:deepPurple[500],
+                      cursor:"pointer"
+                    }}
+                    >
+                       R
+                    </Avatar>
+                    <Menu
+                    id='basic-menu'
+                    
+                   
+                    >
+                      <MenuItem>
+                      Profile
+                      </MenuItem>
+                      <MenuItem>
+                      My Orders
+                      </MenuItem>
+                      <MenuItem>
+                      Logout
+                      </MenuItem>
+                    </Menu>
+                  </div>):(<div>
+                   <Button
+                   className='text-sm font-medium text-gray-700 hover:text-gray-800'
+                   >
+                         Signin
+                   </Button>
+                    
+                  </div>)}
+                  </div>
 
                
 
