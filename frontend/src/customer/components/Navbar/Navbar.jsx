@@ -146,6 +146,26 @@ function classNames(...classes) {
 export const Navbar =()=> {
   const [open, setOpen] = useState(false)
 
+  const [openAuthModal, setOpenAuthModal] = useState(false);
+  const [anchorEl,setAnchorEl] =useState(null);
+  const openUserMenu= Boolean(anchorEl);
+  const jwt= localStorage.getItem("jwt");
+
+  const handleUserClick= (event)=>{
+    setAnchorEl(event.currentTarget);
+  };
+  const handleCloseUserMenu=(event)=>{
+    setAnchorEl(null)
+  }
+
+  const handleClose=()=>{
+    setOpenAuthModal(false)
+  }
+
+  const handleCategory= (category, section, item, close)=>{
+    close()
+  }
+
   return (
     <div className="bg-white fixed z-50 w-full">
       {/* Mobile menu */}
@@ -394,19 +414,11 @@ export const Navbar =()=> {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
-                {/* <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Sign in
-                  </a>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Create account
-                  </a>
-                </div> */}
                  <div className=" hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   {true?(<div>
                     <Avatar
                     className='text-white'
+                    onClick={handleUserClick}
                     aria-controls={open?"basic-menu":undefined}
                     aria-haspop="true"
                     aria-expanded={open? "true":undefined}
@@ -419,10 +431,14 @@ export const Navbar =()=> {
                     </Avatar>
                     <Menu
                     id='basic-menu'
-                    
-                   
+                    anchorEl={anchorEl}
+                    open={openUserMenu}
+                    onClose={handleCloseUserMenu}
+                    MenuListProps={{
+                      "aria-labelledby":"basic-button"
+                    }}
                     >
-                      <MenuItem>
+                      <MenuItem onClick={handleCloseUserMenu}>
                       Profile
                       </MenuItem>
                       <MenuItem>
