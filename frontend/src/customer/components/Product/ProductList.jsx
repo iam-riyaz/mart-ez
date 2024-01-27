@@ -7,7 +7,7 @@ import {
   MinusIcon,
   PlusIcon,
   Squares2X2Icon,
-} from "@heroicons/react/20/solid";
+} from "@heroicons/react/24/outline";
 import ProductCard from "./ProductCard";
 import { mens_kurta } from "../../../data/mens_kurta";
 
@@ -315,14 +315,18 @@ export default function ProductList() {
             </div>
           </div>
 
-          <section aria-labelledby="products-heading" className="pb-24 pt-6">
-            <h2 id="products-heading" className="sr-only">
-              Products
-            </h2>
+          <section  className="pb-24 pt-6">
+            
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5 ">
               {/* Filters */}
               <form className="hidden lg:block">
+              <div className="flex justify-between items-center ">
+            <h2 id="products-heading" className="text-xl font-semibold  ">
+              Filters
+            </h2>
+            <FunnelIcon className="h-5 w-5"/>
+            </div>
                 {filters.map((section) => (
                   <Disclosure
                     as="div"

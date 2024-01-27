@@ -20,8 +20,8 @@ const ProductCard = ({data}) => {
         <div class="mt-4 px-5 pb-5 hover:-translate-y-2 duration-700 ">
           <a href="#">
             <h5 className="text-sm font-semibold text-gray-400">{data.brand}</h5>
-            <div className="h-14 w-48">
-            <h5 class="text-md font-semibold tracking-tight text-slate-900">
+            <div className="h-14 w-full">
+            <h5 class="text-md font-semibold tracking-tight text-slate-900 leading-tight">
               {data.title}
             </h5>
             </div>
