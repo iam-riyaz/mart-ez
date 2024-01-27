@@ -1,36 +1,38 @@
 import React from "react";
 
-const ProductCard = () => {
+const ProductCard = ({data}) => {
   return (
     <div>
-      <div class=" cursor-pointer relative m-2 flex min-w-min max-w-xs flex-col overflow-hidden rounded-lg border  border-gray-300 bg-white-100 shadow-2xl transition ease-in-out delay-150 hover:bg-gray-50 hover:-translate-y-1  hover:scale-105 duration-500 hover:border hover:border-gray-500">
+      <div class=" cursor-pointer relative m-2 my-3 flex w-52 max-w-xs flex-col overflow-hidden rounded-lg border  border-gray-300 bg-white-100 shadow-2xl transition ease-in-out delay-150 hover:bg-gray-50 hover:-translate-y-1  hover:scale-105 duration-500 hover:border hover:border-gray-500">
         <div
           class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl justify-center shadow-md bg-white-100 "
           
         >
           <img
             className="object-contain  "
-            src="https://rukminim1.flixcart.com/image/612/612/kt0enww0/dress/2/d/p/xxl-1091-sheetal-associates-original-imag6g4n7qhwesad.jpeg?q=70"
+            src={data.imageUrl}
             alt="product image"
           />
           <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
-            39% OFF
+            {data.discountPersent}% OFF
           </span>
         </div>
         <div class="mt-4 px-5 pb-5 hover:-translate-y-2 duration-700 ">
           <a href="#">
-            <h5 className="text-md font-semibold text-gray-400">Brand name</h5>
-            <h5 class="text-lg font-semibold tracking-tight text-slate-900">
-              Nike Air MX Super 2500 - Red
+            <h5 className="text-sm font-semibold text-gray-400">{data.brand}</h5>
+            <div className="h-14 w-48">
+            <h5 class="text-md font-semibold tracking-tight text-slate-900">
+              {data.title}
             </h5>
+            </div>
           </a>
           <div class="mt-2 mb-5 flex items-center justify-between">
             <p>
               <span class="text-2xl font-bold text-slate-900">
-                ₹<span>499</span>
+                ₹<span>{data.discountedPrice}</span>
               </span>
               <span class="text-sm text-slate-900 line-through">
-                ₹<span>699</span>
+                ₹<span>{data.price}</span>
               </span>
             </p>
             
