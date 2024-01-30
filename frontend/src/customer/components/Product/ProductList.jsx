@@ -6,12 +6,11 @@ import {
   FunnelIcon,
   MinusIcon,
   PlusIcon,
-  Squares2X2Icon,
 } from "@heroicons/react/24/outline";
 import ProductCard from "./ProductCard";
 import { mens_kurta } from "../../../data/mens_kurta";
 import { sortOptions,singleFilter,filters } from "./filter-and-sort";
-
+import { useNavigate,useLocation } from "react-router-dom";
 
 
 
@@ -21,7 +20,45 @@ function classNames(...classes) {
 
 export default function ProductList() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const location= useLocation()
+  const navigate= useNavigate()
 
+  const handleFilter=(value,sectionId)=>{
+    const searchParams = new URLSearchParams(location.search)
+
+    let filterValue= searchParams.getAll(sectionId)
+    
+    
+    if(filterValue.length>0 && filterValue[0].split(",").includes(value)){
+
+      filterValue= filterValue[0].split(",").filter((item)=>item!==value)
+
+      if(filterValue.length===0)
+      {
+        searchParams.delete(sectionId)
+      }
+    }
+    else{
+      filterValue.push(value)
+      console.log(filterValue)
+    }
+
+    if(filterValue.length>0){
+      searchParams.set(sectionId,filterValue.join(","));
+    }
+    
+    const query= searchParams.toString();
+    navigate({search:`?${query}`})
+
+  }
+
+  const handleRadioFilter=(value, sectionId)=>{
+    const searchParams = new URLSearchParams(location.search)
+
+    searchParams.set(sectionId,value)
+    const query= searchParams.toString();
+    navigate({search:`?${query}`})
+  }
   return (
     <div className="bg-white">
       <div>
@@ -107,6 +144,7 @@ export default function ProductList() {
                                     className="flex items-center"
                                   >
                                     <input
+                                       onChange={()=>handleFilter(option.value , section.id)}
                                       id={`filter-mobile-${section.id}-${optionIdx}`}
                                       name={`${section.id}[]`}
                                       defaultValue={option.value}
@@ -164,6 +202,7 @@ export default function ProductList() {
                                     className="flex items-center"
                                   >
                                     <input
+                                    onChange={()=>handleRadioFilter(option.value, section.id)}
                                       id={`filter-mobile-${section.id}-${optionIdx}`}
                                       name={`${section.id}[]`}
                                       defaultValue={option.value}
@@ -303,6 +342,7 @@ export default function ProductList() {
                                 className="flex items-center"
                               >
                                 <input
+                                 onChange={()=>handleFilter(option.value , section.id)}
                                   id={`filter-${section.id}-${optionIdx}`}
                                   name={`${section.id}[]`}
                                   defaultValue={option.value}
@@ -360,6 +400,7 @@ export default function ProductList() {
                                 className="flex items-center"
                               >
                                 <input
+                                  onChange={()=>handleRadioFilter(option.value, section.id)}
                                   id={`filter-${section.id}-${optionIdx}`}
                                   name={`${section.id}[]`}
                                   defaultValue={option.value}
