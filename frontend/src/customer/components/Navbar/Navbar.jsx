@@ -423,7 +423,7 @@ export const Navbar =()=> {
                     aria-haspop="true"
                     aria-expanded={open? "true":undefined}
                     sx={{
-                      bgcolor:deepPurple[500],
+                      bgcolor:"black",
                       cursor:"pointer"
                     }}
                     >
