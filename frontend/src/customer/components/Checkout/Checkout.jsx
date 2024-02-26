@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import { useLocation, useParams } from "react-router-dom";
 import DeliveryAddressPage from "./DeliveryAddressPage";
 import OrderSummary from "./OrderSummary";
+import { MobileStepper, Paper } from "@mui/material";
 
 const steps = ["Login", "Delivery Address", "Order Summary", "Payment"];
 
@@ -22,8 +23,10 @@ export default function Checkout() {
 
 
   return (
-    <div className="px-20 pt-5">
+    <div className="md:px-20 px-5 pt-5">
       <Box sx={{ width: "100%" }}>
+        
+        <div className="hidden md:block">
         <Stepper activeStep={step-1}>
           {steps.map((label, index) => {
             const stepProps = {};
@@ -48,6 +51,10 @@ export default function Checkout() {
             );
           })}
         </Stepper>
+        </div>
+        <div className="md:hidden block">
+             <h1 className="font-semibold text-xl text-center">{steps[step-1]}</h1>
+        </div>
         {step === steps.length+1 ? (
           <React.Fragment>
             <Typography sx={{ mt: 2, mb: 1 }}>
@@ -70,3 +77,21 @@ export default function Checkout() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
