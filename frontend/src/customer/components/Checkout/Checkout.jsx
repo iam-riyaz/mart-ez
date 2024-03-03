@@ -6,7 +6,7 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useLocation, useParams } from "react-router-dom";
-import AddressForm from "./AddressForm";
+import DeliveryAddressPage from "./DeliveryAddressPage";
 import OrderSummary from "./OrderSummary";
 
 const steps = ["Login", "Delivery Address", "Order Summary", "Payment"];
@@ -59,7 +59,7 @@ export default function Checkout() {
             
             <div>
               {step == 2 ? (
-                <AddressForm />
+                <DeliveryAddressPage />
               ) : step == 3 ? (
                 <OrderSummary />
               ) : null}
