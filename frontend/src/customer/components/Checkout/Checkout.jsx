@@ -48,7 +48,7 @@ export default function Checkout() {
             );
           })}
         </Stepper>
-        {activeStep === steps.length ? (
+        {step === steps.length+1 ? (
           <React.Fragment>
             <Typography sx={{ mt: 2, mb: 1 }}>
               All steps completed - you&apos;re finished
