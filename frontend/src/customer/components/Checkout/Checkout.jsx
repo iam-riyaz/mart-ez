@@ -7,9 +7,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 const steps = [
-  "Select campaign settings",
-  "Create an ad group",
-  "Create an ad",
+  "Login",
+  "Delivery Address",
+  "Order Summary",
+  "Payment"
 ];
 
 export default function Checkout() {
@@ -35,7 +36,14 @@ export default function Checkout() {
 
           return (
             <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
+              <StepLabel {...labelProps} 
+              StepIconProps={{
+                style:{
+                    color:
+                    activeStep === index ? "black" : index < activeStep && "black" 
+                }
+              }}
+              >{label}</StepLabel>
             </Step>
           );
         })}
