@@ -7,6 +7,7 @@ import { Footer } from "./customer/components/Footer/index.jsx";
 import ProductList from "./customer/components/Product/ProductList.jsx";
 import { ProductDetail } from "./customer/components/Product/ProductDetail.jsx";
 import Cart from "./customer/components/Cart/Cart.jsx";
+import Checkout from "./customer/components/Checkout/Checkout.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,7 +20,8 @@ function App() {
           {/* <HomePage/> */}
           {/* <ProductList/> */}
           {/* <ProductDetail/> */}
-          <Cart/>
+          {/* <Cart/> */}
+          <Checkout/>
         </div>
         <Footer/>
       </div>
