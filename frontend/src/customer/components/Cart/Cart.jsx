@@ -38,7 +38,7 @@ function Cart() {
               </div>
             </div>
             <button className="mt-1 w-full rounded-md bg-slate-800 py-1.5 font-medium text-white hover:bg-slate-900">
-              Check out
+              Checkout
             </button>
           </div>
           </div>
