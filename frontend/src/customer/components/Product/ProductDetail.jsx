@@ -4,6 +4,7 @@ import { RadioGroup } from "@headlessui/react";
 import { LinearProgress, Rating } from "@mui/material";
 import ProductDetailReviewCard from "./ProductDetailReviewCard";
 import { ProductDetailRatingCard } from "./ProductDetailRatingCard";
+import SimilerProducts from "./SimilerProducts";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -292,7 +293,7 @@ export function ProductDetail() {
 
         {/* rating and reviews */}
         <section>
-          <h1 className="font-semibold text-lg pb-4 ">
+          <h1 className="font-semibold text-xl pb-4 ">
             Recent Review & Rating
           </h1>
           <div className="border p-5">
@@ -308,6 +309,13 @@ export function ProductDetail() {
                 <ProductDetailRatingCard />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* similer products */}
+        <section>
+          <div className="pt-10">
+            <SimilerProducts/>
           </div>
         </section>
       </div>
