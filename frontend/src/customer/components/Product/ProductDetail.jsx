@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
-import {Rating} from '@mui/material'
+import { LinearProgress, Rating } from "@mui/material";
 import ProductDetailReviewCard from "./ProductDetailReviewCard";
+import { ProductDetailRatingCard } from "./ProductDetailRatingCard";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -37,12 +37,10 @@ const product = {
     { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
   ],
   sizes: [
-
     { name: "S", inStock: true },
     { name: "M", inStock: true },
     { name: "L", inStock: true },
     { name: "XL", inStock: true },
-    
   ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
@@ -66,7 +64,7 @@ export function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white lg:px-20 px-5">
       <div className="pt-6">
         <nav aria-label="Breadcrumb">
           <ol
@@ -128,7 +126,7 @@ export function ProductDetail() {
                       className="h-full w-full object-cover object-center"
                     />
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -138,7 +136,9 @@ export function ProductDetail() {
               <h1 className="text-lg lg:text-xl font-semibold text-gray-900">
                 Brand name
               </h1>
-              <h1 className="text-lg lg:text-xl text-gray-900 opacity-60 pt-1">Product title</h1>
+              <h1 className="text-lg lg:text-xl text-gray-900 opacity-60 pt-1">
+                Product title
+              </h1>
             </div>
 
             {/* Options */}
@@ -153,9 +153,16 @@ export function ProductDetail() {
               {/* Reviews */}
               <div className="mt-6">
                 <div className="flex items-center space-x-3">
-                  <Rating name="read-only" value={4.5} precision={0.5} readOnly/>
+                  <Rating
+                    name="read-only"
+                    value={4.5}
+                    precision={0.5}
+                    readOnly
+                  />
                   <p className="opacity-50 text-sm">5432 Ratings</p>
-                  <p className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">432 Reviews</p>
+                  <p className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                    432 Reviews
+                  </p>
                 </div>
               </div>
 
@@ -164,7 +171,6 @@ export function ProductDetail() {
                 <div className="mt-10">
                   <div className="flex items-center justify-between">
                     <h3 className="text-md font-medium text-gray-900">Size</h3>
-                    
                   </div>
 
                   <RadioGroup
@@ -286,22 +292,23 @@ export function ProductDetail() {
 
         {/* rating and reviews */}
         <section>
-
-         <h1 className="font-semibold text-lg pb-4 ml-5">Recent Review & Rating</h1>
-         <div className="border p-5">
-          
-          <div className="grid grid-cols-12">
-            <div className="col-span-7">
-              <div className="space-y-5">
-              <ProductDetailReviewCard/>
-
+          <h1 className="font-semibold text-lg pb-4 ">
+            Recent Review & Rating
+          </h1>
+          <div className="border p-5">
+            <div className="grid grid-cols-12 gap-4">
+              {/* Review section */}
+              <div className="lg:col-span-7 col-span-12">
+                <div className="space-y-5">
+                  <ProductDetailReviewCard />
+                </div>
               </div>
-
+              {/* Rating section */}
+              <div className="lg:col-span-5 col-span-12">
+                <ProductDetailRatingCard />
+              </div>
             </div>
-
-          
           </div>
-         </div>
         </section>
       </div>
     </div>
