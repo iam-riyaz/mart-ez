@@ -6,6 +6,7 @@ import { HomePage } from "./customer/pages/homePage";
 import { Footer } from "./customer/components/Footer/index.jsx";
 import ProductList from "./customer/components/Product/ProductList.jsx";
 import { ProductDetail } from "./customer/components/Product/ProductDetail.jsx";
+import Cart from "./customer/components/Cart/Cart.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,9 +16,10 @@ function App() {
       <div>
         <Navbar />
         <div className="pt-20" >
-          {/* <HomePage/>
-          <ProductList/> */}
-          <ProductDetail/>
+          {/* <HomePage/> */}
+          {/* <ProductList/> */}
+          {/* <ProductDetail/> */}
+          <Cart/>
         </div>
         <Footer/>
       </div>

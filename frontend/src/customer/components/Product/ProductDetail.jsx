@@ -245,7 +245,7 @@ export function ProductDetail() {
 
                 <button
                   type="submit"
-                  className="mt-5 flex w-1/4 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="mt-5 flex w-1/4 items-center justify-center rounded-md border border-transparent bg-slate-800 px-5 py-2 text-base font-medium text-white hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
                   Add to Cart
                 </button>

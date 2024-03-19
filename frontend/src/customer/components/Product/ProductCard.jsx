@@ -3,7 +3,7 @@ import React from "react";
 const ProductCard = ({data}) => {
   return (
     <div>
-      <div class=" cursor-pointer relative m-2 my-3 flex w-52 max-w-xs flex-col overflow-hidden rounded-lg border  border-gray-300 bg-white-100 shadow-2xl transition ease-in-out delay-150 hover:bg-gray-50 hover:-translate-y-1  hover:scale-105 duration-500 hover:border hover:border-gray-500">
+      <div class=" cursor-pointer relative m-2 my-3 flex w-52 max-w-xs flex-col overflow-hidden rounded-lg border  border-gray-300 bg-white-100 shadow-2xl transition ease-out delay-150 hover:bg-gray-50 hover:translate-y-1  hover:scale-105 duration-100 hover:border hover:border-gray-500">
         <div
           class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl justify-center shadow-md bg-white-100 "
           
@@ -17,7 +17,7 @@ const ProductCard = ({data}) => {
             {data.discountPersent}% OFF
           </span>
         </div>
-        <div class="mt-4 px-5 pb-5 hover:-translate-y-2 duration-700 ">
+        <div class="mt-4 px-5 pb-5  ">
           <a href="#">
             <h5 className="text-sm font-semibold text-gray-400">{data.brand}</h5>
             <div className="h-14 w-full">
@@ -39,7 +39,7 @@ const ProductCard = ({data}) => {
           </div>
           <a
             href="#"
-            class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+            class=" hover:scale-105 duration-100  flex items-center justify-center rounded-md bg-slate-800 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-slate-900 focus:outline-none "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
